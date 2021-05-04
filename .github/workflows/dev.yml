@@ -31,4 +31,19 @@ jobs:
         - name: Build Style
           run: |
             gulp styles
-            ls -l
+        
+        - name: 'Build and push image'
+          uses: azure/docker-login@v1
+          with:
+            login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+            username: ${{ secrets.REGISTRY_USERNAME }}
+            password: ${{ secrets.REGISTRY_PASSWORD }}
+        - run: |
+            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/spacedeck-open:${{ github.sha }}
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/spacedeck-open:${{ github.sha }}
+
+        - name: 'Deploy to Azure App Service'
+          uses: 'azure/webapps-deploy@v2'
+          with:
+            app-name: 'meetingmaker-spacedeck-dev'
+            images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/spacedeck-open:${{ github.sha }}
