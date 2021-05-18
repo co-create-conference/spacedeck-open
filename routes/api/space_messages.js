@@ -9,7 +9,7 @@ var redis = require('../../helpers/redis');
 var mailer = require('../../helpers/mailer');
 var uploader = require('../../helpers/uploader');
 var space_render = require('../../helpers/space-render');
-var phantom = require('../../helpers/phantom');
+var exporter = require('../../helpers/exporter');
 
 var async = require('async');
 var fs = require('fs');
@@ -51,7 +51,13 @@ var roleMapping = {
 router.get('/', function(req, res, next) {
   db.Message.findAll({where:{
     space_id: req.space._id
-  }, include: ['user']})
+  }, include: [
+    {
+      model: db.User,
+      as: 'user',
+      attributes: ['_id', 'email', 'nickname', 'avatar_original_uri', 'avatar_thumb_uri', 'home_folder_id', 'prefs_language', 'prefs_email_notifications', 'prefs_email_digest', 'created_at', 'updated_at'],
+    }
+  ]})
     .then(function(messages) {
       res.status(200).json(messages);
     });

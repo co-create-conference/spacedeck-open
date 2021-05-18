@@ -5,5 +5,5 @@ public/stylesheets/*.css
 database.sqlite
 *.swp
 *~
-*.DS_Store
-.vscode
+storage/
+.DS_Store

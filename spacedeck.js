@@ -35,7 +35,7 @@ console.log("Booting Spacedeck Open… (environment: " + app.get('env') + ")");
 app.use(logger(isProduction ? 'combined' : 'dev'));
 
 i18n.expressBind(app, {
-  locales: ["en", "de", "fr", "oc", "es"],
+  locales: ["de", "en", "es", "fr", "hu", "oc"],
   defaultLocale: "en",
   cookieName: "spacedeck_locale",
   devMode: (app.get('env') == 'development')
@@ -44,9 +44,12 @@ i18n.expressBind(app, {
 app.set('view engine', 'ejs');
 
 if (isProduction) {
-  app.set('views', path.join(__dirname, 'build', 'views'));
-  app.use(favicon(path.join(__dirname, 'build', 'assets', 'images', 'favicon.png')));
-  app.use(express.static(path.join(__dirname, 'build', 'assets')));
+  // app.set('views', path.join(__dirname, 'build', 'views'));
+  // app.use(favicon(path.join(__dirname, 'build', 'assets', 'images', 'favicon.png')));
+  // app.use(express.static(path.join(__dirname, 'build', 'assets')));
+  app.set('views', path.join(__dirname, 'views'));
+  app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.png')));
+  app.use(express.static(path.join(__dirname, 'public')));
 } else {
   app.set('views', path.join(__dirname, 'views'));
   app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.png')));
@@ -120,13 +123,13 @@ const host = config.get('host');
 const port = config.get('port');
 
 const server = http.Server(app).listen(port, host, () => {
-  
+
   if ("send" in process) {
     process.send('online');
   }
 
 }).on('listening', () => {
-  
+
   const host = server.address().address;
   const port = server.address().port;
   console.log('Spacedeck Open listening at http://%s:%s', host, port);

@@ -173,6 +173,7 @@
     "tool_bullets": "Bullets",
     "tool_numbers": "Nombres",
     "color_fill": "Fill",
+    "tool_font": "Poliça",
     "color_stroke": "Traçat",
     "color_text": "Tèxte",
     "tool_type": "Tipe",
@@ -243,7 +244,7 @@
     "what_is_your_name": "La benvenguda a %s ! Mercés de causir un escais-nom.",
     "lang": "en",
     "landing_title": "Vòstre tablèu blanc sul Web.",
-    "landing_claim": "Spacedeck vos permet de facilament combinar quin que siá tipe de mèdias sus un tablèu virtual : tèxte, nòtas, ligams web, amai vidèos e enregistraments àudio. ",
+    "landing_claim": "Spacedeck vos permet de facilament combinar quin tipe que siá de mèdias sus un tablèu virtual : tèxte, nòtas, ligams web, amai vidèos e enregistraments àudio. ",
     "landing_example": "Lo monde utiliza Spacedeck per organizar  lors idèas, en equipa per veire totes los projèctes en una ulhada, a l’escòla e a l’universitat pels mai rics, experiéncia d’aprendissatge connectat.",
     "spaces": "Mos espacis",
     "access_editor_link": "Ligam de modificacion dirècta",
@@ -252,7 +253,7 @@
     "access_anonymous_edit_blocking": "Los convidats pòdon pas modificar los elements qu’an creats.",
     "access_current_members": "Membres actuals",
     "access_new_members": "Convidar de novèls membres",
-    "access_no_members": "Los membres d’aqueste Espacii apreissaràn aquí.",
+    "access_no_members": "Los membres d’aqueste Espaci apareisseràn aquí.",
     "comments": "comentaris",
     "landing_customers": "La fisança de milièr de personas.",
     "landing_features_title": "Un jòc d'enfants d’utilizar.",
@@ -308,6 +309,7 @@
     "list": "lista",
     "link": "Ligam",
     "download_space": "Telecargar espaci",
+    "download_space_as_pdf": "Telecargar espaci coma PDF",
     "type": "Tipe",
     "download": "Telecargar",
     "Previous Zone": "Zòna precedenta",
@@ -319,6 +321,7 @@
     "unlock": "Desverrolhar",
     "follow_present": "Seguir",
     "mute_present": "Quitar de seguir",
-    "follow_present_help": "follow_present_help",
-    "export": "exportar"
+    "follow_present_help": "Se qualqu’un mai presenta aqueste espaci, los demai membres seguiràn automaticament la presentacion. Basculatz l’abonament a la presentacion amb aqueste boton.",
+    "export": "exportar",
+    "media": "Mèdia"
 }

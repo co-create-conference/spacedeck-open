@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node spacedeck.js",
-    "gulp": "gulp styles"
+    "start": "NODE_ENV=production node spacedeck.js",
+    "dev": "nodemon spacedeck.js",
+    "styles": "gulp styles"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -16,6 +17,7 @@
     "body-parser": "^1.19.0",
     "cheerio": "0.22.0",
     "config": "3.3.2",
+    "tedious": "^5.0.3",
     "cookie-parser": "~1.4.3",
     "ejs": "3.1.5",
     "execSync": "latest",
@@ -23,19 +25,14 @@
     "file-type": "^7.6.0",
     "glob": "7.1.1",
     "gm": "^1.23.1",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.2",
     "helmet": "^3.5.0",
     "i18n-2": "0.6.3",
     "log-timestamp": "latest",
     "mock-aws-s3": "^2.6.0",
     "moment": "^2.19.3",
     "morgan": "^1.9.1",
-    "node-phantom-simple": "2.2.4",
-    "node-server-screenshot": "^0.2.1",
     "nodemailer": "^4.6.7",
-    "phantomjs-prebuilt": "^2.1.16",
+    "puppeteer": "8.0.0",
     "read-chunk": "^2.1.0",
     "request": "^2.88.0",
     "sanitize-html": "^1.11.1",
@@ -44,12 +41,18 @@
     "serve-static": "^1.13.1",
     "slug": "^1.1.0",
     "sqlite3": "^4.0.0",
-    "tedious": "^5.0.3",
     "umzug": "^2.1.0",
     "underscore": "1.8.3",
     "uuid": "^3.2.1",
     "validator": "7.0.0",
     "ws": "3.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^2.0.6"
   },
   "main": "app.js",
   "description": "",

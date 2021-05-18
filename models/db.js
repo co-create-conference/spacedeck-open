@@ -22,7 +22,7 @@ const sequelize = new Sequelize(config.get('mssql_dbname'), config.get('mssql_us
     idle: 10000
   },
 
-  logging: sequel_log,
+  logging: false,
 
   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
   operatorsAliases: false
